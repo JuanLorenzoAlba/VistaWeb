@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">VistaWeb</string>
+
+    <string name="ingrese_url">🌐 Ingrese una URL</string>
+    <string name="ir">Ir</string>
+    <string name="hint_url">https://www.google.com</string>
+</resources>
