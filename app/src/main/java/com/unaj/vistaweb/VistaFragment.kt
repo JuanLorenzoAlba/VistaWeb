@@ -27,7 +27,7 @@ class VistaFragment : Fragment() {
         webView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
-                onFinish() // llama a ocultarSpinner()
+                onFinish()
             }
         }
         webView.loadUrl(url)

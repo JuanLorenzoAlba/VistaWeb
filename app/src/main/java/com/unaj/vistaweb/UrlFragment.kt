@@ -26,7 +26,7 @@ class UrlFragment : Fragment() {
         if (context is MiListener) {
             listener = context
         } else {
-            throw RuntimeException("$context must implement MiListener")
+            throw RuntimeException("$context debe implementar MiListener")
         }
     }
 
@@ -49,11 +49,11 @@ class UrlFragment : Fragment() {
 
     fun mostrarSpinner() {
         progressBar.visibility = View.VISIBLE
-        buttonLoad.isEnabled = false // desactiva el botón
+        buttonLoad.isEnabled = false
     }
 
     fun ocultarSpinner() {
         progressBar.visibility = View.GONE
-        buttonLoad.isEnabled = true // vuelve a activarlo
+        buttonLoad.isEnabled = true
     }
 }
