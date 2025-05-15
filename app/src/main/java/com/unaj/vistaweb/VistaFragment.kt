@@ -13,8 +13,7 @@ class VistaFragment : Fragment() {
     private lateinit var webView: WebView
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_vista, container, false)
 
@@ -23,10 +22,14 @@ class VistaFragment : Fragment() {
         return view
     }
 
-    // Método que puede llamarse desde la Activity para cargar una página
-    fun verPagina(url: String) {
-        webView.webViewClient = WebViewClient()
+    fun verPagina(url: String, onFinish: () -> Unit) {
         webView.settings.javaScriptEnabled = true
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                onFinish() // llama a ocultarSpinner()
+            }
+        }
         webView.loadUrl(url)
     }
 }
